@@ -1,0 +1,64 @@
+50
+Los_Carrera 0 50 1200 50 X
+OHiggins 0 100 1200 100 X
+Barros_Arana 0 150 1200 150 X
+Freire 0 200 1200 200 X
+Maipu 0 250 1200 250 X
+Cochrane 0 300 1200 300 X
+Chacabuco 0 350 1200 350 X
+San_Martin 0 400 1200 400 X
+Carrera_Pinto 0 450 1200 450 X
+Victor_Lamas 0 500 1200 500 X
+Roosevelt 0 550 1200 550 X
+Edmundo_Larenas 0 600 1200 600 X
+Janequeo 0 650 1200 650 X
+Tucapel 0 700 1200 700 X
+Rengo 0 750 1200 750 X
+Anibal_Pinto 0 800 1200 800 X
+Lincoyan 0 850 1200 850 X
+Angol 0 900 1200 900 X
+Salas 0 950 1200 950 X
+Serrano 0 1000 1200 1000 X
+Pedro_de_Valdivia 0 1050 1200 1050 X
+Costanera 0 1100 1200 1100 X
+Prat 0 1150 1200 1150 X
+Ejercito 0 1200 1200 1200 X
+Colon 0 1250 1200 1250 X
+Paicavi 50 0 50 1300 Y
+Arturo_Prat 100 0 100 1300 Y
+Tucapel_Norte 150 0 150 1300 Y
+Rengo_Norte 200 0 200 1300 Y
+Lincoyan_Norte 250 0 250 1300 Y
+Orompello 300 0 300 1300 Y
+Caupolican 350 0 350 1300 Y
+Anibal_Pinto_Norte 400 0 400 1300 Y
+Colo_Colo 450 0 450 1300 Y
+Castellon 500 0 500 1300 Y
+Ongolmo 550 0 550 1300 Y
+Janequeo_Norte 600 0 600 1300 Y
+Serrano_Norte 650 0 650 1300 Y
+Salas_Norte 700 0 700 1300 Y
+Angol_Norte 750 0 750 1300 Y
+Freire_Norte 800 0 800 1300 Y
+Maipu_Norte 850 0 850 1300 Y
+Chacabuco_Norte 900 0 900 1300 Y
+San_Martin_Norte 950 0 950 1300 Y
+Los_Carrera_Norte 1000 0 1000 1300 Y
+Rozas 1050 0 1050 1300 Y
+Lautaro 1100 0 1100 1300 Y
+Galvarino 1150 0 1150 1300 Y
+Vilumilla 1200 0 1200 1300 Y
+Diagonal_Biobio 0 0 1200 1200 X
+12
+Plaza_Independencia OHiggins 400
+Catedral OHiggins 450
+UdeC Edmundo_Larenas 300
+Foro_UdeC Edmundo_Larenas 350
+Parque_Ecuador Victor_Lamas 500
+Teatro_Biobio Costanera 150
+Mall_Plaza Los_Carrera 800
+Estacion Prat 250
+Laguna_Redonda Colon 950
+Mercado Barros_Arana 650
+Tribunales OHiggins 700
+Hospital Roosevelt 900

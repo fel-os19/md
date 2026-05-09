@@ -1,0 +1,16 @@
+8
+AvenidaNorte 0 100 500 100 X
+AvenidaCentro 0 250 500 250 X
+AvenidaSur 0 400 500 400 X
+CalleOeste 100 0 100 500 Y
+CalleCentral 250 0 250 500 Y
+CalleEste 400 0 400 500 Y
+Diagonal1 0 0 500 500 X
+Diagonal2 0 500 500 0 X
+6
+Mirador AvenidaSur 450
+Teatro AvenidaCentro 50
+Estadio CalleCentral 50
+Biblioteca CalleEste 300
+Laguna Diagonal1 150
+Mercado Diagonal2 350
