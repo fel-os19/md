@@ -482,7 +482,3 @@ En resumen:
 | Flecha izquierda | Retroceder al tramo anterior |
 
 ---
-
-# 📌 Conclusión
-
-Este proyecto permite aplicar contenidos de Matemáticas Discretas en un caso práctico de rutas turísticas. El uso de grafos permite representar calles, intersecciones y puntos turísticos. El algoritmo de Dijkstra permite calcular caminos mínimos, mientras que la programación dinámica permite optimizar el recorrido entre varios puntos. La salida gráfica facilita la comprensión visual del mapa y entrega instrucciones paso a paso para seguir la ruta calculada.
