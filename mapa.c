@@ -332,7 +332,7 @@ void calcular_y_mostrar_ruta() {
                 if (!visitados[p] && puntos[p].nodo_idx == v) {
                     visitados[p] = 1;
                     puntos_listos++;
-                    printf("  >>> !ATENCION! Acabas de pasar por '%s'. (Marcado como visitado) <<<\n", puntos[p].descripcion);
+                    printf("  >>> !Atención! Acabas de pasar por '%s'. (Marcado como visitado) <<<\n", puntos[p].descripcion);
                 }
             }
         }
