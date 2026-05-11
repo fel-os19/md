@@ -293,14 +293,15 @@ void calcular_y_mostrar_ruta() {
     int visitados[MAX_PUNTOS] = {0};
     int puntos_listos = 1;
     int actual = 0;
-    visitados[0] = 1; // Empezamos en el primer punto del archivo
+    visitados[0] = 1;
 
-    printf("\n=== INSTRUCCIONES DE RUTA ===\n");
+    printf("\n==========================================\n");
+    printf("   INSTRUCCIONES DE RUTA TURISTICA \n");
+    printf("==========================================\n");
     printf("Punto de partida: %s\n", puntos[actual].descripcion);
 
     while (puntos_listos < n_puntos) {
         int siguiente = -1;
-        // Buscar el siguiente punto no visitado (en orden de lista)
         for (int i = 0; i < n_puntos; i++) {
             if (!visitados[i]) {
                 siguiente = i;
@@ -320,26 +321,45 @@ void calcular_y_mostrar_ruta() {
 
         printf("\n--- Viajando hacia: %s ---\n", puntos[siguiente].descripcion);
         
-        for (int i = 1; i < largo; i++) {
-            int u = camino[i - 1];
-            int v = camino[i];
-            
-            printf("- Avanza por '%s' hasta la coordenada (%.1f, %.1f).\n", 
-                   calle_de_segmento(u, v), nodos[v].x, nodos[v].y);
+        // LÓGICA DE AGRUPACIÓN: Aquí se "fusionan" los tramos de la misma calle
+        int k = 1;
+        while (k < largo) {
+            const char* calle_actual = calle_de_segmento(camino[k-1], camino[k]);
+            int fin = k;
+            double acumulado = 0.0;
 
-            // Verificar si al pasar por este nodo (interseccion), visitamos otro punto turistico
-            for (int p = 0; p < n_puntos; p++) {
-                if (!visitados[p] && puntos[p].nodo_idx == v) {
-                    visitados[p] = 1;
-                    puntos_listos++;
-                    printf("  >>> !Atención! Acabas de pasar por '%s'. (Marcado como visitado) <<<\n", puntos[p].descripcion);
+            // Sumamos distancias mientras sigamos en la misma calle
+            while (fin < largo) {
+                int u = camino[fin-1];
+                int v = camino[fin];
+                if (strcmp(calle_actual, calle_de_segmento(u, v)) != 0) break;
+                acumulado += distancia(nodos[u].x, nodos[u].y, nodos[v].x, nodos[v].y);
+                fin++;
+            }
+
+            int nodo_final = camino[fin-1];
+            printf("- Avanza %.1f unidades por '%s' hasta la coordenada (%.1f, %.1f).\n", 
+                   acumulado, calle_actual, nodos[nodo_final].x, nodos[nodo_final].y);
+
+            // Marcamos puntos turísticos que pillamos "en el camino"
+            for (int step = k; step < fin; step++) {
+                int v = camino[step];
+                for (int p = 0; p < n_puntos; p++) {
+                    if (!visitados[p] && puntos[p].nodo_idx == v && p != siguiente) {
+                        visitados[p] = 1;
+                        puntos_listos++;
+                        printf("  >>> !ATENCION! Acabas de pasar por '%s'. (Marcado como visitado) <<<\n", puntos[p].descripcion);
+                    }
                 }
             }
+            k = fin;
         }
         
+        visitados[siguiente] = 1;
+        puntos_listos++;
         actual = siguiente;
     }
-    printf("\n=== RUTA FINALIZADA. Todos los puntos visitados ===\n");
+    printf("\n=== RUTA FINALIZADA. Todos los puntos visitados ===\n\n");
 }
 
 /*Función Main*/
