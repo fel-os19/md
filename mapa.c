@@ -296,7 +296,7 @@ void calcular_y_mostrar_ruta() {
     visitados[0] = 1;
 
     printf("\n==========================================\n");
-    printf("   INSTRUCCIONES DE RUTA TURISTICA \n");
+    printf("   Instrucciones de la ruta turística \n");
     printf("==========================================\n");
     printf("Punto de partida: %s\n", puntos[actual].descripcion);
 
@@ -321,7 +321,7 @@ void calcular_y_mostrar_ruta() {
 
         printf("\n--- Viajando hacia: %s ---\n", puntos[siguiente].descripcion);
         
-        // LÓGICA DE AGRUPACIÓN: Aquí se "fusionan" los tramos de la misma calle
+        // Aquí se "fusionan" los tramos de la misma calle
         int k = 1;
         while (k < largo) {
             const char* calle_actual = calle_de_segmento(camino[k-1], camino[k]);
@@ -338,7 +338,7 @@ void calcular_y_mostrar_ruta() {
             }
 
             int nodo_final = camino[fin-1];
-            printf("- Avanza %.1f unidades por '%s' hasta la coordenada (%.1f, %.1f).\n", 
+            printf("- Avanza %.1f metros por '%s' hasta la coordenada (%.1f, %.1f).\n", 
                    acumulado, calle_actual, nodos[nodo_final].x, nodos[nodo_final].y);
 
             // Marcamos puntos turísticos que pillamos "en el camino"
@@ -348,7 +348,7 @@ void calcular_y_mostrar_ruta() {
                     if (!visitados[p] && puntos[p].nodo_idx == v && p != siguiente) {
                         visitados[p] = 1;
                         puntos_listos++;
-                        printf("  >>> !ATENCION! Acabas de pasar por '%s'. (Marcado como visitado) <<<\n", puntos[p].descripcion);
+                        printf("  >>> !Atención! Acabas de pasar por '%s'. (Marcado como visitado) <<<\n", puntos[p].descripcion);
                     }
                 }
             }
@@ -369,7 +369,7 @@ int main() {
     char respuesta[10];
 
     printf("==========================================\n");
-    printf("   MAPA TURISTICO - MATEMATICAS DISCRETAS \n");
+    printf("   MAPA TURÍSTICO - MATEMATICAS DISCRETAS \n");
     printf("==========================================\n");
 
     do {
