@@ -362,9 +362,6 @@ int main() {
                 leido_ok = 1;
                 printf("Archivo '%s' cargado exitosamente.\n", archivo);
             }
-            else if (leer_archivo == 1){
-                return 0;
-            }
             else {
                 printf("[Error] No se pudo leer el archivo o el formato es incorrecto. Intente de nuevo.\n");
             }
@@ -379,6 +376,6 @@ int main() {
 
     } while (respuesta[0] == 's' || respuesta[0] == 'S');
 
-    printf("\nSaliendo del programa. ¡Exito en la entrega!\n");
+    printf("\nEjecución finalizada.\n");
     return 0;
 }
