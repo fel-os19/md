@@ -1,29 +1,70 @@
-# 🗺️ Exploración Adicional: Mapa Turístico (Versión Gráfica y Ruta Óptima)
+# Versión gráfica exploratoria
 
-**ATENCIÓN:** Este directorio contiene un desarrollo de carácter exploratorio y **NO corresponde a la entrega oficial** para ser evaluada en entornos Linux. La versión oficial multiplataforma se encuentra en la raíz del repositorio.
+Esta carpeta contiene una versión gráfica experimental del programa, desarrollada como complemento de la versión oficial por consola (`mapa.c`).
 
-## 📌 Descripción
-Esta versión lleva el modelamiento de grafos un paso más allá al implementar dos características avanzadas:
-1. **Optimización Global (TSP):** A diferencia de la versión oficial que sigue un orden secuencial, esta versión resuelve el Problema del Agente Viajero (Traveling Salesperson Problem) para encontrar el orden de visita que minimiza la distancia total de todo el recorrido.
-2. **Interfaz Gráfica Nativa:** Renderiza el mapa, los nodos y el camino paso a paso utilizando la API Win32 de Windows.
+El archivo principal de esta versión es:
 
-## ⚠️ Restricciones y Consideraciones Técnicas
+```text
+versiongrafica2.c
+```
 
-Para ejecutar este programa, se deben tener en cuenta las siguientes limitaciones arquitectónicas y matemáticas:
+## Importante
 
-### 1. Dependencia Exclusiva de Windows
-El código utiliza las librerías `<windows.h>` y la interfaz de dispositivos gráficos (GDI) nativa del sistema operativo Microsoft Windows. **No compilará ni se ejecutará en Linux o macOS.**
+Esta versión **no corresponde al entregable oficial principal**. Fue realizada como una prueba adicional para visualizar el mapa y el recorrido de forma gráfica.
 
-### 2. Límite de Puntos Turísticos (Máx. 20)
-Para encontrar la ruta global óptima, el motor matemático utiliza **Programación Dinámica con Máscaras de Bits (Bitmasking)**. 
-* Si bien esto reduce enormemente la complejidad factorial tradicional $O(n!)$ del TSP a una complejidad de **$O(n^2 \cdot 2^n)$**, el crecimiento sigue siendo exponencial.
-* Por restricción de memoria y tiempo de procesamiento, **el programa abortará por seguridad si el archivo de entrada contiene más de 20 puntos turísticos.**
+Utiliza dependencias propias de Windows, por lo que debe compilarse en Windows con MinGW.
 
-## ⚙️ Instrucciones de Compilación (MinGW)
+## Compilación
 
-Para compilar este código fuente en Windows, es necesario utilizar el compilador GCC (como MinGW) y enlazar obligatoriamente las librerías gráficas y matemáticas (`gdi32`, `user32`, `m`).
-
-Abre la terminal de comandos (CMD o PowerShell) en esta carpeta y ejecuta:
+Desde la carpeta donde se encuentra `versiongrafica2.c`, ejecutar:
 
 ```cmd
-gcc version_grafica.c -o mapa_grafico.exe -lgdi32 -luser32 -lm
+gcc -Wall -Wextra -g3 versiongrafica2.c -o output\versiongrafica2.exe -lgdi32 -luser32 -lm
+```
+
+Si no existe la carpeta `output`, crearla antes:
+
+```cmd
+mkdir output
+```
+
+## Ejecución
+
+```cmd
+output\versiongrafica2.exe
+```
+
+## Cambio de archivo de entrada
+
+Esta versión no solicita el archivo por consola, ya que fue desarrollada como complemento experimental.
+
+Para cambiar el archivo de entrada, se debe modificar directamente el nombre del archivo en el código, aproximadamente en la **línea 931**:
+
+```c
+char *nombre_archivo = "input.txt";
+```
+
+Por ejemplo:
+
+```c
+char *nombre_archivo = "input2.txt";
+```
+
+o:
+
+```c
+char *nombre_archivo = "input3.txt";
+```
+
+## Consideraciones
+
+- La versión oficial del proyecto es `mapa.c`.
+- Esta versión gráfica depende de Windows.
+- El cambio de input se realiza desde el código fuente.
+- Las instrucciones principales del proyecto están en el README general.
+
+## Autores
+
+- Rodrigo Domínguez Larenas
+- Ariel Fernández Fuentealba
+- Felipe Grandón Contreras
